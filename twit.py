@@ -13,7 +13,8 @@ def timeStamp():
 
 def crawl():
     #채팅창 CSS
-    result =  soup.find('div', {'class': 'tw-full-height tw-flex-grow-1 tw-pd-b-1'})
+    # result =  soup.find('div', {'class': 'tw-full-height tw-flex-grow-1 tw-pd-b-1'}) #이전 소스
+    result = soup.find('div', {'class': 'tw-flex-grow-1 tw-full-height tw-pd-b-1'}) #이걸로 바뀜
     return result
 
 
@@ -33,7 +34,7 @@ options.add_argument("settings.tts.speech_volume")
 driver = webdriver.Chrome("./chromedriver", chrome_options=options)
 
 #페이지 URL
-driver.get("https://www.twitch.tv/saddummy")
+driver.get("https://www.twitch.tv/hsdogdog")
 # 페이지 로딩까지 대기
 time.sleep(1)
 # 메시지 리스트 생성
@@ -42,7 +43,7 @@ mList = list()
 timeList = list()
 
 #수집시간
-crawlTime = 30
+crawlTime = 10
 
 for i in range(crawlTime):
     # 페이지 elements 모두 가져오기
